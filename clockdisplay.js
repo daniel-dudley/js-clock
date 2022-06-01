@@ -5,15 +5,9 @@ class ClockDisplay{
         this.showLeadingZeroes = showLeadingZeroes;
     }
 
-    setTextColor(textColor) {
+    set(textColor, clockType, showLeadingZeroes){
         this.textColor = textColor;
-    }
-
-    setClockType(clockType) {
         this.clockType = clockType;
-    }
-
-    setShowLeadingZeroes(showLeadingZeroes) {
         this.showLeadingZeroes = showLeadingZeroes;
     }
         
@@ -23,7 +17,7 @@ class ClockDisplay{
 
     showTime(){
         var date = new Date();
-        var h = date.getHours() - 3; // 0 - 23
+        var h = date.getHours(); // 0 - 23
         var m = date.getMinutes(); // 0 - 59
         var s = date.getSeconds(); // 0 - 59
         
@@ -47,10 +41,9 @@ class ClockDisplay{
     }
 } 
  
-let clock = new ClockDisplay("blue", "12h", false);
-//clock.setTextColor("red");
-//clock.setClockType("24h");
-//clock.setShowLeadingZeroes(false);
+let clock = new ClockDisplay("green", "12h", false);
+//let clock2 = new ClockDisplay("green", "12h", false);
+//clock.set("red", "24h", true);
 
 clock.changeTextColor();
 setInterval(() => {
